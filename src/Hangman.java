@@ -1,5 +1,3 @@
-import java.io.*;
-
 public class Hangman {
 
     public static void main(String args[]) {
@@ -15,6 +13,7 @@ public class Hangman {
             prompter.displayProgress();
             prompter.promptForGuess();
         }
+
         prompter.displayOutcome();
     }
 }

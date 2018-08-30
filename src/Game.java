@@ -1,4 +1,3 @@
-
 public class Game {
     public static final int MAX_MISSES = 7;
     private String answer;
@@ -12,7 +11,7 @@ public class Game {
     }
 
     private char normalizeGuess(char letter) {
-        if(!Character.isLetter(letter)) {
+        if (!Character.isLetter(letter)) {
             throw new IllegalArgumentException("A letter is required");
 
         }
@@ -24,7 +23,7 @@ public class Game {
     }
 
     public boolean applyGuess(String letters) {
-        if(letters.length() == 0) {
+        if (letters.length() == 0) {
             throw new IllegalArgumentException("No letter found");
         }
         return applyGuess(letters.charAt(0));
@@ -33,10 +32,10 @@ public class Game {
     public boolean applyGuess(char letter) {
         letter = normalizeGuess(letter);
         boolean isHit = answer.indexOf(letter) != -1;
-        if(isHit) {
-            hits+=letter;
+        if (isHit) {
+            hits += letter;
         } else {
-            misses+=letter;
+            misses += letter;
         }
         return isHit;
     }
@@ -60,6 +59,7 @@ public class Game {
     public boolean isWon() {
         return getCurrentProgress().indexOf('-') == -1;
     }
+
     public String getAnswer() {
         return answer;
     }

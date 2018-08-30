@@ -17,21 +17,21 @@ public class Prompter {
             try {
                 isHit = game.applyGuess(guessInput);
                 isAcceptable = true;
-            }catch(IllegalArgumentException iae) {
+            } catch (IllegalArgumentException iae) {
                 System.out.printf("%s    Please try again! %n", iae.getMessage());
             }
-        }while(!isAcceptable);
+        } while (!isAcceptable);
         return isHit;
     }
-    public void displayProgress(){
+
+    public void displayProgress() {
         System.out.printf("You have %d tries left to solve %s%n", game.getRemainingTries(), game.getCurrentProgress());
     }
 
     public void displayOutcome() {
         if (game.isWon()) {
             System.out.println("You Won");
-        }
-        else {
+        } else {
             System.out.printf("Bummer, you lost.  The word was %s.  Better luck next time%n",
                     game.getAnswer());
         }
